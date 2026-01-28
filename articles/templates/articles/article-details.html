@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+	    <main class="container">
+        <!-- Breadcrumb -->
+        <nav class="flex mt-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <li class="inline-flex items-center">
+                    <a href="{% url 'index' %}"
+                        class="inline-flex items-center text-sm gap-x-1  text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        <svg class="size-4 mb-0.5">
+                            <use href="#home" />
+                        </svg>
+                        صفحه اصلی
+                    </a>
+                </li>
+                <li class="inline-flex items-center">
+                    <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                    <a href="{% url 'shop' %}"
+                        class="inline-flex items-center text-sm gap-x-1  text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        مقالات
+                    </a>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="ms-1 text-sm  text-gray-500 md:ms-2 dark:text-gray-400">جزییات مقاله</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+        <!-- Article Details -->
+        <section class="flex flex-col lg:flex-row items-start gap-4 mt-8 ">
+            <!-- ARTICLE -->
+            <div
+            class="w-full lg:w-3/4 flex flex-col gap-y-8 px-4 lg:px-8 py-4 rounded-lg bg-white dark:bg-gray-800 shadow">
+            <!-- ARTICLE HEADER -->
+            <div class="w-full flex flex-col gap-y-6 ">
+                <div class="flex flex-col lg:flex-row gap-y-3 lg:items-center lg:justify-between">
+                    <h2 class="font-DanaDemiBold text-lg lg:text-2xl">بررسی گوشی گلکسی A26 سامسونگ</h2>
+                    <span class="flex items-center gap-x-1 text-blue-500 cursor-pointer">
+                        <svg class="w-4 h-4">
+                            <use href="#share"></use>
+                        </svg>
+                        <p class="font-DanaMedium">اشتراک گذاری</p>
+                    </span>
+                </div>
+                <div class="flex flex-wrap  items-center gap-y-3 gap-x-8 text-sm">
+                    <span class="flex items-center gap-x-1 text-gray-400 ">
+                        <svg class="w-4 h-4">
+                            <use href="#list-bullet"></use>
+                        </svg>
+                        <p>دسته‌بندی : بررسی گوشی موبایل</p>
+                    </span>
+                    <span class="flex items-center gap-x-1 text-gray-400 ">
+                        <svg class="w-4 h-4">
+                            <use href="#user"></use>
+                        </svg>
+                        <p>توسط : پارسا وصالی </p>
+                    </span>
+                    <span class="flex items-center gap-x-1 text-gray-400 ">
+                        <svg class="w-4 h-4">
+                            <use href="#calendar"></use>
+                        </svg>
+                        <p> تاریخ انتشار : 1403/05/20 </p>
+                    </span>
+                </div>
+            </div>
+            <!-- ARTICLE MAIN -->
+            <div>
+                <img class="rounded-lg" src="{% static './Images/articles/5.webp' %}" alt="">
+                <p class="mt-3 leading-10 text-gray-600 dark:text-gray-300">
+                    گوشی گلکسی A26 یکی از میان‌رده‌های تازه‌وارد سامسونگ است که با طراحی ساده اما شیک، نمایشگری با کیفیت و امکاناتی مناسب، توانسته توجه علاقه‌مندان به گوشی‌های اقتصادی را به خود جلب کند. این گوشی با وجود قیمت مناسب، ویژگی‌هایی را ارائه می‌دهد که برای استفاده روزمره کاملاً کافی هستند.
+                </p>
+                <h2 class="mt-3 font-DanaMedium text-xl">
+                    طراحی و صفحه‌نمایش
+                </h2>
+                <p class="mt-3 leading-10 text-gray-600 dark:text-gray-300">
+                    گلکسی A26 دارای بدنه‌ای از جنس پلاستیک با طراحی مینیمال است. نمایشگر 6.5 اینچی از نوع PLS LCD با رزولوشن +HD و نرخ نوسازی 90 هرتز، تجربه بصری روانی را فراهم می‌کند. روشنایی مناسب صفحه باعث می‌شود در شرایط نوری مختلف نیز بتوان به راحتی با دستگاه کار کرد.
+                </p>
+                <h2 class="mt-3 font-DanaMedium text-xl">مشخصات فنی :</h2>
+                <ul
+                    class="mt-3 text-gray-600 dark:text-gray-300 space-y-2 child:flex child:items-center child:gap-x-2">
+                    <li>
+                        <span class="w-3 h-3 rounded-full bg-blue-500 flex"></span>
+                        <p>پردازنده: MediaTek Helio G85</p>
+                    </li>
+                    <li>
+                        <span class="w-3 h-3 rounded-full bg-blue-500 flex"></span>
+                        <p>رم: 4 یا 6 گیگابایت</p>
+                    </li>
+                    <li>
+                        <span class="w-3 h-3 rounded-full bg-blue-500 flex"></span>
+                        <p>حافظه داخلی: 64 یا 128 گیگابایت</p>
+                    </li>
+                    <li>
+                        <span class="w-3 h-3 rounded-full bg-blue-500 flex"></span>
+                        <p>باتری: 5000 میلی‌آمپر ساعت با شارژ 15 وات</p>
+                    </li>
+                </ul>
+
+                <h2 class="mt-4 font-DanaMedium text-xl">
+                    دوربین و عملکرد کلی
+                </h2>
+                <p class="mt-3 leading-10 text-gray-600 dark:text-gray-300">
+                    سامسونگ در بخش دوربین از یک سنسور اصلی 50 مگاپیکسلی استفاده کرده که در نور کافی عملکرد مناسبی دارد. دوربین‌های کمکی شامل یک سنسور عمق‌سنج و ماکرو هستند. در کل برای ثبت تصاویر روزمره و شبکه‌های اجتماعی، این ترکیب قابل قبول است. عملکرد سخت‌افزاری دستگاه برای اپ‌های عمومی و بازی‌های سبک مناسب بوده و رابط کاربری One UI Core تجربه روانی را ارائه می‌دهد.
+                </p>
+            </div>
+            </div>
+            <!-- SIDE BAR -->
+            <div
+                class="top-2 lg:sticky w-full lg:w-1/4 child:rounded-lg child:bg-white child:dark:bg-gray-800 child:shadow child:p-4 space-y-5 child:flex child:flex-col child:gap-y-4">
+                <div>
+                    <h4 class="font-DanaMedium">جدیدترین مقالات : </h4>
+                    <ul class="w-full child:flex child:items-center child:gap-x-2 child:cursor-pointer space-y-4 ">
+                        <li>
+                            <img class="w-24 h-16 object-cover rounded-lg" src="{% static './Images/articles/2.webp' %}" alt="">
+                            <a class="flex flex-col gap-y-2 ">
+                                <p class="line-clamp-1">بررسی گوشی گلکسی A26 سامسونگ</p>
+                                <span href="#" class="flex items-center gap-x-1 text-sm text-gray-400">
+                                    <svg class="w-4 h-4 mb-1">
+                                        <use href="#calendar"></use>
+                                    </svg>
+                                    1403/02/21
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <img class="w-24 h-16 object-cover rounded-lg" src="{% static './Images/articles/2.webp' %}" alt="">
+                            <a class="flex flex-col gap-y-2 ">
+                                <p class="line-clamp-1">برسی لپ تاپ ایسوس</p>
+                                <span href="#" class="flex items-center gap-x-1 text-sm text-gray-400">
+                                    <svg class="w-4 h-4 mb-1">
+                                        <use href="#calendar"></use>
+                                    </svg>
+                                    1403/02/21
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <img class="w-24 h-16 object-cover rounded-lg" src="{% static './Images/articles/3.webp' %}" alt="">
+                            <a class="flex flex-col gap-y-2 ">
+                                <p class="line-clamp-1">بررسی گوشی گلکسی</p>
+                                <span href="#" class="flex items-center gap-x-1 text-sm text-gray-400">
+                                    <svg class="w-4 h-4 mb-1">
+                                        <use href="#calendar"></use>
+                                    </svg>
+                                    1403/02/21
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <img class="w-24 h-16 object-cover rounded-lg" src="{% static './Images/articles/4.webp' %}" alt="">
+                            <a class="flex flex-col gap-y-2 ">
+                                <p class="line-clamp-1">بهترین لپ تاپ های 2025</p>
+                                <span href="#" class="flex items-center gap-x-1 text-sm text-gray-400">
+                                    <svg class="w-4 h-4 mb-1">
+                                        <use href="#calendar"></use>
+                                    </svg>
+                                    1403/02/21
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="articles.html" class="py-1.5 gap-x-1 bg-blue-500 hover:bg-blue-600 flex items-center justify-center text-white rounded-lg transition-all">مشاهده بیشتر
+                        <svg class="w-4 h-4">
+                            <use href="#chevron-left"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <h4 class="font-DanaMedium"> دسته بندی : </h4>
+                    <ul class="child:flex child:items-center child:justify-between child:cursor-pointer space-y-3 ">
+                        <li class="group">
+                            <span
+                                class="flex items-center justify-center gap-x-1 group-hover:pr-2 duration-300 transition-all group-hover:text-blue-500">
+                                <p>برسی موبایل</p>
+                                <svg class="w-4 h-4">
+                                    <use href="#chevron-left"></use>
+                                </svg>
+                            </span>
+                            <span
+                                class="w-5 h-5 flex items-center justify-center rounded-lg text-white bg-blue-500 text-xs">12</span>
+                        </li>
+                        <li class="group">
+                            <span
+                                class="flex items-center justify-center gap-x-1 group-hover:pr-2 duration-300 transition-all group-hover:text-blue-500">
+                                <p>لپتاپ</p>
+                                <svg class="w-4 h-4">
+                                    <use href="#chevron-left"></use>
+                                </svg>
+                            </span>
+                            <span
+                                class="w-5 h-5 flex items-center justify-center rounded-lg text-white bg-blue-500 text-xs">2</span>
+                        </li>
+                        <li class="group">
+                            <span
+                                class="flex items-center justify-center gap-x-1 group-hover:pr-2 duration-300 transition-all group-hover:text-blue-500">
+                                <p>هدفون و ساعت</p>
+                                <svg class="w-4 h-4">
+                                    <use href="#chevron-left"></use>
+                                </svg>
+                            </span>
+                            <span
+                                class="w-5 h-5 flex items-center justify-center rounded-lg text-white bg-blue-500 text-xs">6</span>
+                        </li>
+                        <li class="group">
+                            <span
+                                class="flex items-center justify-center gap-x-1 group-hover:pr-2 duration-300 transition-all group-hover:text-blue-500">
+                                <p>تکنولوژی</p>
+                                <svg class="w-4 h-4">
+                                    <use href="#chevron-left"></use>
+                                </svg>
+                            </span>
+                            <span
+                                class="w-5 h-5 flex items-center justify-center rounded-lg text-white bg-blue-500 text-xs">12</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </main>
+{% endblock %}
+
