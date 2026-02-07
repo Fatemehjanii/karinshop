@@ -28,14 +28,22 @@ class Product(Base):
     rating = models.FloatField(default=0)
     color_hex = models.CharField(max_length=255, default='#000000')
 
+    def __str__(self):
+        return f"{self.name}"
 
 
 class Tag(Base):
     name = models.CharField(max_length=255)
 
+    def __str__(self):
+        return f"{self.name}"
+
 
 class Comment(Base):
     name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.name}"
 
 class Like(Base):
     pass
@@ -48,4 +56,8 @@ class Category(Base):
                                null=True,
                                blank=True ,
                                default=None)
+
+
+    def __str__(self):
+        return f"{self.name}"
 

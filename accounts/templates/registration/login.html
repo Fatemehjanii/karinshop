@@ -40,7 +40,7 @@
   </svg>
 {% endblock %}
 {% block body %}
-  <section class="relative flex items-center justify-center min-h-screen w-full">
+      <section class="relative flex items-center justify-center min-h-screen w-full">
     <!-- background -->
     <div class="pointer-events-none absolute inset-0 flex w-screen items-center justify-center overflow-hidden
   [mask-image:radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0)_85%)]">
@@ -75,26 +75,26 @@
       </div>
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <p class="mb-2 text-gray-800 dark:text-gray-100 font-DanaMedium text-lg">ورود | ثبت‌نام </p>
-        <form class="space-y-5" method="POST" action="{% url 'confirm' %}">
-          {% csrf_token %}
-          <div>
-            <label for="{{ form.email}}" class="block text-sm/6 font-medium text-gray-500 dark:text-gray-300">لطفا
-              ایمیل خود را وارد کنید
-
-            </label>
-            <div class="mt-3">
-              <input type="email" required
-                class="block w-full p-3 text-base outline dark:outline-none outline-1 -outline-offset-1 placeholder:text-gray-400  sm:text-sm/6 transition-all
-                text-gray-800 dark:text-gray-100 dark:bg-gray-900 bg-slate-100 border border-transparent hover:border-slate-200 appearance-none rounded-md outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-blue-400
-                ">
+        <form class="space-y-5" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="email" class="block text-sm/6 font-medium text-gray-500 dark:text-gray-300">لطفا شماره موبایل یا ایمیل خود را وارد کنید</label>
+                <div class="mt-3">
+                    {{ form.email }}
+                </div>
+                {% if form.email.errors %}
+                    <p class="text-error">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                {% endif %}
             </div>
-            <!-- ERRORE -->
-            <p class="text-error"></p>
-          </div>
-          <div>
-            <button type="submit" class="submit-btn">ورود</button>
-          </div>
+            <div>
+                <button type="submit" class="submit-btn">ادامه</button>
+            </div>
         </form>
+
         <p class="mt-8 text-center text-sm/6 text-gray-500 dark:text-gray-300">
           ورود شما به معنای پذیرش <span class="text-blue-400">قوانین سایت</span> است
         </p>
