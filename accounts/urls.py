@@ -14,5 +14,6 @@ urlpatterns = [
     path('confirm/', views.SignUpView.as_view(), name='confirm'),
     path('reset_password/', views.reset_password, name='reset_password'),
     path('verify_password/', views.verify_password, name='verify_password'),
+    path('api/',views.UserListView.as_view())
 
 ]

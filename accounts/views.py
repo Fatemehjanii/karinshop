@@ -1,7 +1,25 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import get_user_model, authenticate, login
 from django import views
 from . import forms
+from . import serializers
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from . import models
+
+
+
+
+# class ArticlesViewSet(ViewSet):
+#     def list(self, request):
+#         queryset = models.User.objects.all()
+#         serializer = serializers.ArticleSerializer(queryset, many=True)
+#         return Response(serializer.data)
+#     def retrive(self, request, pk=None):
+#         queryset = models.User.objects.get(id=pk)
+#         serializer = serializers.ArticleSerializer(queryset)
+#         return Response(serializer.data)
+
+
 
 class SignUpView(views.View):
     def get(self, request):
@@ -37,6 +55,12 @@ def verify_password(request):
     else:
         form = forms.PasswordForm()
     return render(request, 'registration/verify-password.html', {'form': form})
+
+class UserListView(APIView):
+    def get(self, request):
+        obj = models.User.objects.all()
+        s = serializers.UserListSerializer(obj, many=True)
+        return Response(s.data)
 
 def confirm(request):
     return render(request, 'registration/confirm-code.html')
