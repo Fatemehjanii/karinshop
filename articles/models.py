@@ -31,3 +31,11 @@ class ArticleCat(Base):
 
     def __str__(self):
         return f"{self.name}"
+
+
+class testmodel(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField(max_length=300)
+
+
+
