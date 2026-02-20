@@ -1472,7 +1472,9 @@
                             </div>
                              <!-- product img -->
                             <a href="{% url 'product_details' %}">
+                                {% if i.image.url %}
                                 <img class="small-card_img" src="{{ i.image.url }}" alt="{{ product.description }}">
+                                {% endif %}
                             </a>
 
                             <!--  product footer -->
